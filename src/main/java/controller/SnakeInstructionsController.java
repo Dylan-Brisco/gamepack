@@ -13,6 +13,6 @@ public class SnakeInstructionsController extends Controller {
 
     @FXML
     public void onBack() throws Exception { // if back is clicked return to the TicTacToe menu
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/Snake.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/Snake.fxml")));
     }
 }

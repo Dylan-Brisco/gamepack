@@ -99,7 +99,7 @@ public class SnakeGameController extends Controller {
        /* Optional<ButtonType> o = new Alert(Alert.AlertType.CONFIRMATION, "Game over, " +
                (snakeBoard.getScore())).showAndWait();
         if (!o.isPresent()) {
-            mainApp.openView(new FXMLLoader(getClass().getResource("../view/Snake.fxml")));
+            mainApp.openView(new FXMLLoader(getClass().getResource("/view/Snake.fxml")));
         }
         o.ifPresent(new Consumer<ButtonType>() {
             @Override
@@ -107,7 +107,7 @@ public class SnakeGameController extends Controller {
                 if (buttonType.equals(ButtonType.OK)) {
                     reset(); */
                // } else if (buttonType.equals(ButtonType.CANCEL)) {
-                    mainApp.openView(new FXMLLoader(getClass().getResource("../view/Snake.fxml")));
+                    mainApp.openView(new FXMLLoader(getClass().getResource("/view/Snake.fxml")));
                 }
 
 

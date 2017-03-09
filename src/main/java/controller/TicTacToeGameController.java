@@ -71,10 +71,8 @@ public class TicTacToeGameController extends Controller {
      */
 
     private void doTurn() throws IllegalArgumentException {
-        System.out.println("doTurn");
         GamePlayer<TicTacToeMove> currentTurn = board.getCurrentTurn() == 0 ? player0 : player1;
         currentTurn.makeMove(board, (TicTacToeMove move) -> {
-            System.out.println("Move is " + move);
             if(move!=null) {
                 board.makeMove(move);
                 updateView(move);
@@ -96,7 +94,6 @@ public class TicTacToeGameController extends Controller {
      * @param m The current move
      */
     private void updateView(TicTacToeMove m) {
-        System.out.println("updateView");
         Label piece = new Label(m.getPiece().name()); // changes the piece to the current one playing (X->O, O->X)
         piece.setFont(Font.font(30)); // set font size to 30 pt
         piece.setAlignment(Pos.CENTER); // center piece
@@ -113,15 +110,15 @@ public class TicTacToeGameController extends Controller {
     private void gameOver() {
         Optional<ButtonType> o = new Alert(Alert.AlertType.CONFIRMATION, "Game over").showAndWait();
         if (!o.isPresent()) {
-            mainApp.openView(new FXMLLoader(getClass().getResource("../view/TicTacToe.fxml")));
+            mainApp.openView(new FXMLLoader(getClass().getResource("/view/TicTacToe.fxml")));
         }
         o.ifPresent(new Consumer<ButtonType>() {
             @Override
             public void accept(ButtonType buttonType) {
                 if (buttonType.equals(ButtonType.OK)) {
-                    mainApp.openView(new FXMLLoader(getClass().getResource("../view/TicTacToe.fxml")));
+                    mainApp.openView(new FXMLLoader(getClass().getResource("/view/TicTacToe.fxml")));
                 } else if (buttonType.equals(ButtonType.CANCEL)) {
-                    mainApp.openView(new FXMLLoader(getClass().getResource("../view/MainMenu.fxml")));
+                    mainApp.openView(new FXMLLoader(getClass().getResource("/view/MainMenu.fxml")));
                 }
             }
         });

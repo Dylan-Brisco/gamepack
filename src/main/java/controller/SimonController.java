@@ -28,7 +28,7 @@ public class SimonController extends Controller {
     @FXML
     public void handleSinglePlayer() throws Exception {
         SimonGameController c = (SimonGameController) mainApp.openView(
-                new FXMLLoader(getClass().getResource("../view/SimonGame.fxml")));
+                new FXMLLoader(getClass().getResource("/view/SimonGame.fxml")));
     }
 
     /**
@@ -36,7 +36,7 @@ public class SimonController extends Controller {
      */
     @FXML
     public void handleInstructions() {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/SimonInstructions.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/SimonInstructions.fxml")));
     }
 
     /**
@@ -45,6 +45,6 @@ public class SimonController extends Controller {
      */
     @FXML
     public void onBack() throws Exception {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/MainMenu.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/MainMenu.fxml")));
     }
 }

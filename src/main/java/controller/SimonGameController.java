@@ -79,11 +79,8 @@ public class SimonGameController extends Controller {
      */
     private void makeMove(SimonBoard.Color color) {
         if (!currentlyFlashing && !board.isGameOver()) {
-            System.out.println("makeMove");
             board.makeMove(color);
-            System.out.println(color.toString());
             if (board.isGameOver()) { // if the game is over, end the game
-                System.out.println("gameOver");
                 gameOver();
             } else {
                 if (board.isSequenceOver()) {// if the sequence is over start flashing the next sequence
@@ -100,7 +97,6 @@ public class SimonGameController extends Controller {
                         public void handle(long now) {
                             if (now - startTime >= (long) 2e9) { // 2 seconds gap
 
-                                System.out.println("animating");
                                 stop();
                             }
                         }
@@ -134,7 +130,6 @@ public class SimonGameController extends Controller {
                 public void handle(long now) {
                     if (now - startTime >= (long) 1e9) { // will flash button for .5 seconds
 
-                        System.out.println("animating");
                         button.setBackground(new Background(new BackgroundFill(original, null, null))); // will reset button to original color
                         stop();
                     }
@@ -167,7 +162,6 @@ public class SimonGameController extends Controller {
 
         if (i < board.getCurrentSequence().size()) {
             currentlyFlashing = true;
-            System.out.println("flashColors");
             switch (board.getCurrentSequence().get(i)) { // gets the color we need to flash
                 case GREEN: // will flash green
                     flashButtons(greenButton, Color.GREEN, Color.rgb(160, 255, 160), i);
@@ -205,7 +199,6 @@ public class SimonGameController extends Controller {
      * @param i index of the current sequence
      */
     private void flashButtons(Button button, Color original, Color newColor, int i) {
-        System.out.println("flashButtons called");
         button.setBackground(new Background(new BackgroundFill(newColor, null, null)));
         new AnimationTimer() {
             long startTime;
@@ -220,7 +213,6 @@ public class SimonGameController extends Controller {
             public void handle(long now) {
                 if (now - startTime >= (long) 1.5e9) {
 
-                    System.out.println("animating");
                     button.setBackground(new Background(new BackgroundFill(original, null, null)));
                     stop();
                     flashColors(i+1);
@@ -251,13 +243,13 @@ public class SimonGameController extends Controller {
         // will display a pop-up so the user can leave the game
          Optional<ButtonType> o = new Alert(Alert.AlertType.CONFIRMATION, "Game over ").showAndWait();
         if (!o.isPresent()) {
-            mainApp.openView(new FXMLLoader(getClass().getResource("../view/Simon.fxml")));
+            mainApp.openView(new FXMLLoader(getClass().getResource("/view/Simon.fxml")));
         }
         o.ifPresent(new Consumer<ButtonType>() {
             @Override
             public void accept(ButtonType buttonType) {
                 if (buttonType.equals(ButtonType.OK)) {
-                    mainApp.openView(new FXMLLoader(getClass().getResource("../view/Simon.fxml")));
+                    mainApp.openView(new FXMLLoader(getClass().getResource("/view/Simon.fxml")));
                 } else if (buttonType.equals(ButtonType.CANCEL)) {
 
                 }

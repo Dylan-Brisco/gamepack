@@ -27,7 +27,7 @@ public class MainMenuController extends Controller {
 
 
         gameList.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/" + VIEWS[newValue.intValue()]));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/" + VIEWS[newValue.intValue()]));
             // assigns views to the list elements
             mainApp.openView(loader);
         });

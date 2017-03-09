@@ -32,7 +32,7 @@ public class TicTacToeController extends Controller {
      */
     @FXML
     public void handleSinglePlayer() throws Exception {
-        TicTacToeGameController c = (TicTacToeGameController) mainApp.openView(new FXMLLoader(getClass().getResource("../view/TicTacToeGame.fxml")));
+        TicTacToeGameController c = (TicTacToeGameController) mainApp.openView(new FXMLLoader(getClass().getResource("/view/TicTacToeGame.fxml")));
         HumanTicTacToePlayer human = new HumanTicTacToePlayer(c.getGrid());
         c.setPlayers(new RandomTicTacToePlayer(), human);
         c.start();
@@ -41,7 +41,7 @@ public class TicTacToeController extends Controller {
     //Todo Implement Two Player
     @FXML
     public void handleTwoPlayers() throws Exception {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/Lobby.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/Lobby.fxml")));
     }
 
     /**
@@ -49,7 +49,7 @@ public class TicTacToeController extends Controller {
      */
     @FXML
     public void handleInstructions() {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/TicTacToeInstructions.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/TicTacToeInstructions.fxml")));
 
     }
 
@@ -59,6 +59,6 @@ public class TicTacToeController extends Controller {
      */
     @FXML
     public void onBack() throws Exception {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/MainMenu.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/MainMenu.fxml")));
     }
 }

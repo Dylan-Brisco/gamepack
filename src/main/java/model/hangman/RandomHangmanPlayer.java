@@ -17,7 +17,6 @@ public class RandomHangmanPlayer implements GamePlayer<HangmanMove> {
      * Will randomly select a word from the MIT text file
      */
     public void makeMove(GameState<HangmanMove> state, MoveHandler<HangmanMove> handler) {
-        System.out.println("Make Move");
             try {
                 ArrayList<String> words = new ArrayList<>();
                // BufferedReader reader = new BufferedReader(new FileReader("HangmanWords.txt"));
@@ -27,7 +26,6 @@ public class RandomHangmanPlayer implements GamePlayer<HangmanMove> {
                 }
                 Collections.shuffle(words); // will shuffle the array list
                 String randomWord = words.get(0); // will pick the first word from the random array list
-                System.out.println(randomWord);
             }
 
             catch (Exception e) {

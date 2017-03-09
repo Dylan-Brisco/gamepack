@@ -82,7 +82,7 @@ public class PongGameController extends Controller {
     private void gameOver() {
         timer.stop(); // stops the animation
         gameOver = true;
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/Pong.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/Pong.fxml")));
     }
 
 

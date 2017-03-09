@@ -13,6 +13,6 @@ public class PongInstructionsController extends Controller {
 
     @FXML
     public void onBack() {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/Pong.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/Pong.fxml")));
     }
 }

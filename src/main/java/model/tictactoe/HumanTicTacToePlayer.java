@@ -46,7 +46,6 @@ public class HumanTicTacToePlayer implements GamePlayer<TicTacToeMove> {
         return (MouseEvent e) -> {
             for (Pair<Node, EventHandler<MouseEvent>> p : l) {
                 p.getKey().removeEventHandler(MouseEvent.MOUSE_CLICKED, p.getValue()); //removes eventHandler from pane
-                System.out.println(m);
                 handler.handle(m); // handles move
             }
 

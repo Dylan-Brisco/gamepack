@@ -31,12 +31,12 @@ public class LobbyController extends Controller {
 
     @FXML
     public void onBack() {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/MainMenu.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/MainMenu.fxml")));
     }
 
     @FXML
     public void handleHosting() {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/HostingMenu.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/HostingMenu.fxml")));
     }
 
     @FXML

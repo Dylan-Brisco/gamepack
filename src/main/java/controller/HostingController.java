@@ -15,6 +15,6 @@ public class HostingController extends Controller {
 
         @FXML
         private void onBack() throws Exception { //returns to lobby if back is clicked
-            mainApp.openView(new FXMLLoader(getClass().getResource("../view/Lobby.fxml")));
+            mainApp.openView(new FXMLLoader(getClass().getResource("/view/Lobby.fxml")));
         }
 }

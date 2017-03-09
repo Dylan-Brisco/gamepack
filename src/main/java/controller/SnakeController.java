@@ -28,7 +28,7 @@ public class SnakeController extends Controller {
     @FXML
     public void handleSinglePlayer() throws Exception {
         SnakeGameController c = (SnakeGameController) mainApp.openView(
-                new FXMLLoader(getClass().getResource("../view/SnakeGame.fxml")));
+                new FXMLLoader(getClass().getResource("/view/SnakeGame.fxml")));
     }
 
     /**
@@ -36,7 +36,7 @@ public class SnakeController extends Controller {
      */
     @FXML
     public void handleInstructions() {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/SnakeInstructions.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/SnakeInstructions.fxml")));
 
     }
 
@@ -46,6 +46,6 @@ public class SnakeController extends Controller {
      */
     @FXML
     public void onBack() throws Exception {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/MainMenu.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/MainMenu.fxml")));
     }
 }

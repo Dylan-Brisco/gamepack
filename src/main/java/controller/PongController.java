@@ -31,7 +31,7 @@ public class PongController extends Controller {
        */
        @FXML
         public void handleTwoPlayers() throws Exception {
-            mainApp.openView(new FXMLLoader(getClass().getResource("../view/PongGame.fxml")));
+            mainApp.openView(new FXMLLoader(getClass().getResource("/view/PongGame.fxml")));
         }
 
         /**
@@ -39,7 +39,7 @@ public class PongController extends Controller {
          */
         @FXML
         public void handleInstructions() {
-            mainApp.openView(new FXMLLoader(getClass().getResource("../view/PongInstructions.fxml")));
+            mainApp.openView(new FXMLLoader(getClass().getResource("/view/PongInstructions.fxml")));
 
         }
 
@@ -49,6 +49,6 @@ public class PongController extends Controller {
          */
         @FXML
         public void onBack() throws Exception {
-            mainApp.openView(new FXMLLoader(getClass().getResource("../view/MainMenu.fxml")));
+            mainApp.openView(new FXMLLoader(getClass().getResource("/view/MainMenu.fxml")));
         }
     }

@@ -150,11 +150,9 @@ public class PongBoard {
             }
 
         } else if (colliding(leftPaddle2, rightPaddle2, bottomPaddle2, topPaddle2, ballLeftX, ballRightX, ballBottom, ballTop)) {
-            System.out.println("Right Collision");
             // checks for collision of the right paddle
             ball.setVelocityX(-ball.getVelocityX()); // reflects the ball
             while (colliding(leftPaddle1, rightPaddle1, bottomPaddle1, topPaddle1, ballLeftX, ballRightX, ballBottom, ballTop)) {
-                System.out.println("Ball X: " + ball.getX() + " Ball Y: " + ball.getY());
                 ballLeftX = ball.getX() - PongBall.RADIUS; // updates ball locations
                 ballRightX = ball.getX() + PongBall.RADIUS;
                 ballBottom = ball.getY() + PongBall.RADIUS;
@@ -166,7 +164,6 @@ public class PongBoard {
             // checks for collision with the top of the screen
             ball.setVelocityY(-ball.getVelocityY()); // deflect y velocity
             while (ballTop < 0) {
-                System.out.println("Ball X: " + ball.getX() + " Ball Y: " + ball.getY());
                 ballLeftX = ball.getX() - PongBall.RADIUS;
                 ballRightX = ball.getX() + PongBall.RADIUS;
                 ballBottom = ball.getY() + PongBall.RADIUS;
@@ -178,7 +175,6 @@ public class PongBoard {
             // checks for collision with the bottom of the screen
             ball.setVelocityY(-ball.getVelocityY()); // deflect y velocity
             while (ballTop > BOARD_HEIGHT) {
-                System.out.println("Ball X: " + ball.getX() + " Ball Y: " + ball.getY());
                 ballLeftX = ball.getX() - PongBall.RADIUS;
                 ballRightX = ball.getX() + PongBall.RADIUS;
                 ballBottom = ball.getY() + PongBall.RADIUS;
@@ -189,7 +185,6 @@ public class PongBoard {
         }
 
         if (isRoundOver()) { // if round is over then end round and reset board
-            System.out.println("Round is over");
             endRound();
         }
     }
@@ -210,10 +205,8 @@ public class PongBoard {
      */
     public void launchBall() {
         double angle = rand.nextDouble() * 2.0 * HALF_MAX_ANGLE - HALF_MAX_ANGLE;
-        System.out.println("Scored Last: " + scoredLast);
         if (scoredLast == 1) {
             angle += Math.PI;
-            System.out.println("Angle: " + angle);
         }
         ball.setVelocityX(.5 * MAX_VELOCITY * Math.cos(angle)); // randomly generated x velocity
         ball.setVelocityY(.5 * MAX_VELOCITY * Math.sin(angle)); // randomly generated y velocity

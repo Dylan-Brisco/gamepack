@@ -20,7 +20,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         // loads the main menu
         currentStage = primaryStage;
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MainMenu.fxml")); // .. references above directory, /view/MainMenu tells us where the view is
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainMenu.fxml")); // .. references above directory, /view/MainMenu tells us where the view is
         // loader is used to create the view and link elements with the controller
         Parent root = loader.load();
         MainMenuController mainMenuController = loader.getController();

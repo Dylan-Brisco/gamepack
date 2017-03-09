@@ -13,6 +13,6 @@ public class BattleshipInstructionsController extends Controller{
 
     @FXML
     public void onBack() {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/Battleship.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/Battleship.fxml")));
     }
 }

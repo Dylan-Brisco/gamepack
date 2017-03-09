@@ -14,7 +14,7 @@ public class SimonInstructionsController extends Controller {
 
     @FXML
     public void onBack() { // if back is clicked return to the Hangman Menu
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/Simon.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/Simon.fxml")));
     }
 }
 

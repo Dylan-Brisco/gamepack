@@ -60,7 +60,6 @@ public class HangmanGameController extends Controller {
             }
             int i = rand.nextInt(words.size()); // generates random int
             randomWord = words.get(i).toUpperCase(); // picks word at randomly generated int
-            System.out.println(randomWord);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -107,15 +106,15 @@ public class HangmanGameController extends Controller {
         Optional<ButtonType> o = new Alert(Alert.AlertType.CONFIRMATION, "Game over, " +
                 (board.places().get(1) == 1 ? "You Win!" : "You Lose!")).showAndWait();
         if (!o.isPresent()) {
-            mainApp.openView(new FXMLLoader(getClass().getResource("../view/MainMenu.fxml")));
+            mainApp.openView(new FXMLLoader(getClass().getResource("/view/MainMenu.fxml")));
         }
         o.ifPresent(new Consumer<ButtonType>() {
             @Override
             public void accept(ButtonType buttonType) {
                 if (buttonType.equals(ButtonType.OK)) {
-                    mainApp.openView(new FXMLLoader(getClass().getResource("../view/Hangman.fxml")));
+                    mainApp.openView(new FXMLLoader(getClass().getResource("/view/Hangman.fxml")));
                 } else if (buttonType.equals(ButtonType.CANCEL)) {
-                    mainApp.openView(new FXMLLoader(getClass().getResource("../view/MainMenu.fxml")));
+                    mainApp.openView(new FXMLLoader(getClass().getResource("/view/MainMenu.fxml")));
                 }
             }
         });

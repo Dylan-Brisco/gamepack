@@ -35,13 +35,13 @@ public class HangmanController extends Controller {
     @FXML
     public void handleSinglePlayer() throws Exception {
         HangmanGameController c = (HangmanGameController) mainApp.openView(
-                new FXMLLoader(getClass().getResource("../view/HangmanGame.fxml")));
+                new FXMLLoader(getClass().getResource("/view/HangmanGame.fxml")));
         c.setPlayers(new HumanHangmanPlayer());
     }
 
     @FXML
     public void handleTwoPlayers() throws Exception {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/Lobby.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/Lobby.fxml")));
     }
 
     /**
@@ -49,7 +49,7 @@ public class HangmanController extends Controller {
      */
     @FXML
     public void handleInstructions() {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/HangmanInstructions.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/HangmanInstructions.fxml")));
 
     }
 
@@ -59,6 +59,6 @@ public class HangmanController extends Controller {
      */
     @FXML
     public void onBack() throws Exception {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/MainMenu.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/MainMenu.fxml")));
     }
 }

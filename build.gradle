@@ -3,10 +3,23 @@ version '0.1-SNAPSHOT'
 
 apply plugin: 'java'
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+}
+
+jar {
+    baseName = "gamepack"
+    version = "1.0.0"
+    manifest {
+        attributes (
+            'Main-Class': 'fxapp.Main'
+        )
+    }
+    from {
+        configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}
+    }
 }
 
 dependencies {

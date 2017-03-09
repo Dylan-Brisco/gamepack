@@ -18,7 +18,6 @@ public class RandomTicTacToePlayer implements GamePlayer<TicTacToeMove> {
         int j = 0;
         for (TicTacToeMove m : moves) {
             if (i == j) {
-                System.out.println(m);
                 handler.handle(m);
                 return;
             }

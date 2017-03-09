@@ -29,7 +29,7 @@ public class BattleshipController extends Controller {
      */
     @FXML
     public void handleSinglePlayer() throws Exception {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/BattleshipGame.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/BattleshipGame.fxml")));
     }
 
     /**
@@ -37,7 +37,7 @@ public class BattleshipController extends Controller {
      */
     @FXML
     public void handleInstructions() {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/BattleshipInstructions.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/BattleshipInstructions.fxml")));
     }
 
     /**
@@ -46,6 +46,6 @@ public class BattleshipController extends Controller {
      */
     @FXML
     public void onBack() throws Exception {
-        mainApp.openView(new FXMLLoader(getClass().getResource("../view/MainMenu.fxml")));
+        mainApp.openView(new FXMLLoader(getClass().getResource("/view/MainMenu.fxml")));
     }
 }

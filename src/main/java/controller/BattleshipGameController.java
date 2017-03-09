@@ -80,7 +80,6 @@ public class BattleshipGameController extends Controller {
      * If it is a miss it is set to black
      */
     public void doHumanTurn() {
-        System.out.println("Human turn");
         boolean validHit = false;
         int rowInput = -1;
         int colInput = -1;
@@ -88,12 +87,9 @@ public class BattleshipGameController extends Controller {
             boolean validInput = true;
             rowInput = 0;
             colInput = 0;
-            System.out.println("pressed");
 
-            System.out.println(userRowInput.getText());
             if (userRowInput.getCharacters() != null && userRowInput.getText().length() == 1) {
                 rowInput = Integer.parseInt(userRowInput.getText()) - 1;
-                System.out.println("Row Input: " + rowInput);
                 if (rowInput < 0 || rowInput > 9) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error");
@@ -181,7 +177,6 @@ public class BattleshipGameController extends Controller {
      * @param col the column location of the box
      */
     public void colorBoxHit(BattleshipGrid grid, int row, int col) {
-        System.out.println("HIT");
         if(grid.equals(computerGrid)) { // if computerGrid then shade computer nodes
             computerNodes[row][col].setBackground(new Background(new BackgroundFill(Color.RED, null, null)));
         }
@@ -197,7 +192,6 @@ public class BattleshipGameController extends Controller {
      * @param col the column location of the box
      */
     public void colorBoxMiss(BattleshipGrid grid, int row, int col) {
-        System.out.println("MISS");
         if(grid.equals(computerGrid)) { // if computerGrid then shade computer nodes
             computerNodes[row][col].setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
         }
@@ -226,7 +220,7 @@ public class BattleshipGameController extends Controller {
             wantsRandom = result.get();
         }
         else {
-            mainApp.openView(new FXMLLoader(getClass().getResource("../view/Battleship.fxml")));
+            mainApp.openView(new FXMLLoader(getClass().getResource("/view/Battleship.fxml")));
         }
         if (wantsRandom) { // if they want randomly assigned positions
             randomlyPlaceShips(playerGrid);
@@ -247,7 +241,7 @@ public class BattleshipGameController extends Controller {
                     isRotated = wantRotated.get();
                 }
                 else {
-                    mainApp.openView(new FXMLLoader(getClass().getResource("../view/Battleship.fxml")));
+                    mainApp.openView(new FXMLLoader(getClass().getResource("/view/Battleship.fxml")));
                 }
 
                 boolean isValidShip = false;
@@ -262,11 +256,9 @@ public class BattleshipGameController extends Controller {
                     Optional<Integer> rowStart = rowStartLoc.showAndWait();
                     if (rowStart.isPresent()) {
                         rowStartLocation = rowStart.get() - 1; // board is 0-8 so must -1 from user input
-                        System.out.println(Ship.SHIPNAMES[i]);
-                        System.out.println("row start " + rowStartLocation);
                     }
                     else { // if they click cancel or X out then go to main menu
-                        mainApp.openView(new FXMLLoader(getClass().getResource("../view/Battleship.fxml")));
+                        mainApp.openView(new FXMLLoader(getClass().getResource("/view/Battleship.fxml")));
                     }
 
                     ChoiceDialog<Integer> colStartLoc = new ChoiceDialog<>(1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -278,14 +270,12 @@ public class BattleshipGameController extends Controller {
                     Optional<Integer> colStart = colStartLoc.showAndWait();
                     if (colStart.isPresent()) {
                         colStartLocation = colStart.get() - 1;
-                        System.out.println("Column start " + colStartLocation);
                     }
                     else {
-                        mainApp.openView(new FXMLLoader(getClass().getResource("../view/Battleship.fxml")));
+                        mainApp.openView(new FXMLLoader(getClass().getResource("/view/Battleship.fxml")));
                     }
 
                     if (isRotated) { // vertical
-                        System.out.println("IS ROTATED = TRUE");
                         s = Ship.SHIPS[i];
                         s = s.shipRotate(); // rotate the ship
                         s.setGridRowStartLocation(rowStartLocation); // set row location
@@ -304,7 +294,7 @@ public class BattleshipGameController extends Controller {
                         alert.setContentText("Make sure ship doesn't go off the grid or overlap with other ships");
                         alert.showAndWait();
                         if(!result.isPresent()) {
-                            mainApp.openView(new FXMLLoader(getClass().getResource("../view/Battleship.fxml")));
+                            mainApp.openView(new FXMLLoader(getClass().getResource("/view/Battleship.fxml")));
                         }
 
                     }
@@ -348,15 +338,15 @@ public class BattleshipGameController extends Controller {
         Optional<ButtonType> o = new Alert(Alert.AlertType.CONFIRMATION, "Game over, " +
                 (totalTimesPlayerHit < 17 ? "You Win!" : "You Lose!")).showAndWait();
         if (!o.isPresent()) {
-            mainApp.openView(new FXMLLoader(getClass().getResource("../view/Battleship.fxml"))); // will return user to battleship menu
+            mainApp.openView(new FXMLLoader(getClass().getResource("/view/Battleship.fxml"))); // will return user to battleship menu
         }
         o.ifPresent(new Consumer<ButtonType>() {
             @Override
             public void accept(ButtonType buttonType) {
                 if (buttonType.equals(ButtonType.OK)) {
-                    mainApp.openView(new FXMLLoader(getClass().getResource("../view/Battleship.fxml"))); // will return user to battleship menu
+                    mainApp.openView(new FXMLLoader(getClass().getResource("/view/Battleship.fxml"))); // will return user to battleship menu
                 } else if (buttonType.equals(ButtonType.CANCEL)) {
-                    mainApp.openView(new FXMLLoader(getClass().getResource("../view/MainMenu.fxml"))); // will return user to main menu
+                    mainApp.openView(new FXMLLoader(getClass().getResource("/view/MainMenu.fxml"))); // will return user to main menu
                 }
             }
         });

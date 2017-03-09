@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TicTacToeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SpaceInvadersController">
    <top>
-      <Label text="GameOfLife" BorderPane.alignment="CENTER">
+      <Label text="Space Invaders" BorderPane.alignment="CENTER">
          <font>
             <Font size="31.0" />
          </font>
@@ -30,6 +30,7 @@
          <children>
             <Button fx:id="play" mnemonicParsing="false" text="Play" />
             <Button fx:id="instructions" mnemonicParsing="false" text="Instructions" />
+            <Button fx:id="back" mnemonicParsing="false" text="Return To Main Menu" />
          </children>
          <padding>
             <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />

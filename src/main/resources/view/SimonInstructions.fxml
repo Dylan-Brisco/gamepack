@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane fx:controller="controller.SimonInstructionsController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="34.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Simon Instructions" wrappingWidth="356.59765625">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="34.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is a memory game" />
+      <Text layoutX="34.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press the colored buttons in the order they flash" />
+      <Text layoutX="34.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Every time you get the sequence correct, an additional color will be added" />
+      <Button fx:id = "back" onAction="#onBack" layoutX="34.0" layoutY="295.0" mnemonicParsing="false" text="Back"/>
+   </children>
+</Pane>

@@ -42,8 +42,8 @@ public class PongPaddle {
         if(d == Direction.NONE) {
             height += 0; // keeps paddle in same location
         }
-        if(height + PADDLE_LENGTH/2 > PongBoard.BOARD_HEIGHT) {
-            height = PongBoard.BOARD_HEIGHT - PADDLE_LENGTH/2; // makes sure paddle does not go off screen
+        if(height + PADDLE_LENGTH/2 > PongBoard.BOARD_HEIGHT-4 ) {
+            height = PongBoard.BOARD_HEIGHT - PADDLE_LENGTH; // makes sure paddle does not go off screen
         }
         if(height - PADDLE_LENGTH/2 < 0) {
             height = PADDLE_LENGTH/2; // makes sure paddle does not go off screen

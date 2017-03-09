@@ -62,8 +62,8 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
                     </rowConstraints>
                   </GridPane>
-         <NumberTextField fx:id="userRowInput" layoutY="168.0" prefHeight="27.0" prefWidth="200.0" promptText="Column" onAction="#doTurn"/>
-         <NumberTextField fx:id="userColInput" layoutX="398.0" layoutY="168.0" prefHeight="27.0" prefWidth="200.0" promptText="Row" onAction="#doTurn" />
+         <NumberTextField fx:id="userRowInput" layoutY="168.0" prefHeight="27.0" prefWidth="200.0" promptText="Row" onAction="#doTurn"/>
+         <NumberTextField fx:id="userColInput" layoutX="398.0" layoutY="168.0" prefHeight="27.0" prefWidth="200.0" promptText="Column" onAction="#doTurn" />
          <Button onAction="#doTurn" fx:id="confirmChoice" layoutX="199.0" layoutY="168.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="200.0" text="Fire" />
             </AnchorPane>
       </SplitPane>

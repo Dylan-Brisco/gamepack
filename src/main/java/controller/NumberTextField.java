@@ -10,7 +10,7 @@ public class NumberTextField extends TextField {
     @Override
     public void replaceText(int start, int end, String text) {
         if(validate(text)) {
-            replaceSelection(text);
+            super.replaceText(start, end, text);
         }
     }
 

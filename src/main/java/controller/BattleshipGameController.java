@@ -105,7 +105,7 @@ public class BattleshipGameController extends Controller {
             }
 
             if (userColInput.getCharacters() != null && userColInput.getText().length() == 1) {
-                colInput = Integer.parseInt(userColInput.getText()) -1;
+                colInput = Integer.parseInt(userColInput.getText()) - 1;
                 if (colInput < 0 || colInput > 9) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error");
@@ -118,7 +118,7 @@ public class BattleshipGameController extends Controller {
                 }
             }
 
-            if (computerGrid.getBox(rowInput, colInput).isHit() || computerGrid.getBox(rowInput, colInput).isMiss()) {
+            if (computerGrid.getBox(colInput, rowInput).isHit() || computerGrid.getBox(colInput, rowInput).isMiss()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("You Already Hit This Location");
@@ -127,13 +127,13 @@ public class BattleshipGameController extends Controller {
                 validInput = false;
             } else {
                 if (validInput) {
-                    if (computerGrid.takeShot(rowInput, colInput)) {
+                    if (computerGrid.takeShot(colInput, rowInput)) {
                         totalTimesComputerHit++;
-                        computerGrid.getBox(rowInput, colInput).setHit(true);
-                        colorBoxHit(computerGrid, rowInput, colInput);
+                        computerGrid.getBox(colInput, rowInput).setHit(true);
+                        colorBoxHit(computerGrid, colInput, rowInput);
                     } else {
-                        computerGrid.getBox(rowInput, colInput).setMiss(true);
-                        colorBoxMiss(computerGrid, rowInput, colInput);
+                        computerGrid.getBox(colInput, rowInput).setMiss(true);
+                        colorBoxMiss(computerGrid, colInput, rowInput);
                     }
                 }
                 validHit = true;
@@ -145,8 +145,8 @@ public class BattleshipGameController extends Controller {
     /**
      * Will randomly generate a row and column location
      * Will see if there is a player ship part in row, col
-     * If there is, then it is shaded red on player's board
-     * If there is not, then it is shaded black on player's board
+     * If there is, then it is shaded red on grid
+     * If there is not, then it is shaded black on grid
      */
     public void doComputerTurn() {
         boolean validInput = false;
@@ -212,7 +212,7 @@ public class BattleshipGameController extends Controller {
      * Uses confirm dialogs to get input
      * If they enter input that makes ship go off board, reprompted
      * If they enter input that makes ship overlap with other ship, reprompted
-     * Asked if they would like the ship verical or horizonal
+     * Asked if they would like the ship vertical or horizontal
      */
     public void setPlayerShips() {
         boolean wantsRandom = false;

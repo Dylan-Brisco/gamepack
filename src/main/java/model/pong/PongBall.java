@@ -1,10 +1,6 @@
 package model.pong;
 
 /**
- * Created by dylanbrisco on 2/8/17.
- */
-
-/**
  * Ball has an x location, y location, x velocity, y velocity, and radius
  */
 public class PongBall {
